@@ -27,4 +27,3 @@ rewritten to work with HTTP clients because telnet **SUCKS** and is really annoy
 [mozilla js POST docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST)
 
 [p5js docs](https://p5js.org/reference/)
-\
