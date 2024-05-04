@@ -19,7 +19,12 @@ rewritten to work with HTTP clients because telnet **SUCKS** and is really annoy
 
 ---resources---
 ***check these out if you want to commit changes or write your own!***
-[label](https://docs.python.org/3/library/http.server.html)
-[label](https://docs.python.org/3/library/threading.html)
-[label](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST)
-[label](https://p5js.org/reference/)
+
+[python http server docs](https://docs.python.org/3/library/http.server.html)
+
+[python threading docs](https://docs.python.org/3/library/threading.html)
+
+[mozilla js POST docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST)
+
+[p5js docs](https://p5js.org/reference/)
+\
