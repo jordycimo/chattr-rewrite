@@ -2,7 +2,9 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import threading, json
 
 hostname = "192.168.1.156"
-port = 8000
+port = str(input("port: "))
+if not port:
+    port = 8000
 
 class server(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -15,15 +17,14 @@ class server(BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write(bytes(open("conf/code/error").read(), "utf-8"))
+            self.wfile.write(bytes(open("conf/code/404").read(), "utf-8"))
     def do_POST(self):
+        self.send_response(201)
         length = int(self.headers['Content-Length'])
         message = self.rfile.read(length).decode("utf-8")
         print("client sent: "+message)
-        json_msg = json.dumps(message, indent=4)
-        with open("board.json","w") as outfile:
-            outfile.write(json_msg)
-        self.send_response(200)
+        with open("site/board.txt","a") as outfile:
+            outfile.write(message.removeprefix("\"").removesuffix("\""))
 
 if __name__ == "__main__":        
     webserver = HTTPServer((hostname, port), server)
